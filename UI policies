@@ -1,0 +1,15 @@
+(function transformRow(source, target, map, log, isUpdate) {
+
+    // Map source fields to target fields
+    target.name = source.name;
+    target.email = source.email;
+    target.phone = source.phone;
+    target.department = source.department;
+
+    // Validate required data
+    if (!source.name || !source.email) {
+        ignore = true;
+        log.warn("Record skipped: Name or Email is missing.");
+    }
+
+})(source, target, map, log, action == "update");
